@@ -1,0 +1,13 @@
+.art_image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.art_container {
+    width: 150px;
+    height: 150px
+}
+
+.art_container:hover {
+    transform: scale(1.5);
+}

@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+
+{% for piece in pieces %}
+<div>
+    <div onclick = "test()" class = "art_container">
+        <img class = "art_image" src="{{piece.image}}">
+    </div>
+</div>
+{% endfor %}
