@@ -1,12 +1,12 @@
 {% load static %}
 <div>{% include "navigation_bar.html" %}</div>
 <link rel="stylesheet" href="{% static 'index.css' %}">
-<body style ="background-color: cornflowerblue">
-    {% for piece in pieces %}
+<body style ="background-color: #c9f4da">
     <div class = "flex-container">
-        <div class = "art_container">
+        {% for piece in pieces %}
+            <div class = "art_container">
             <img class = "art_image" src="{{piece.image}}">
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </body>
