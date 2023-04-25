@@ -4,10 +4,15 @@
 }
 
 .art_container {
-    width: 150px;
-    height: 150px
+    width: 300px;
+    height: 300px
 }
 
-.art_container:hover {
-    transform: scale(1.5);
+.flex-container {
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 300px;
+    display: inline-block;
 }
