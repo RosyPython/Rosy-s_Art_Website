@@ -16,3 +16,9 @@
     height: 300px;
     display: inline-block;
 }
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
