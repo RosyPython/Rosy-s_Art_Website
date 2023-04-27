@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-=x%h%5e#h1_sv(^&x*1z9+l!y-9l*=tn9#sbjw%&a%=lm=1951
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'rosypython.pythonanywhere.com'
+    ]
 
 
 # Application definition
@@ -118,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = '/home/RosyPython/Rosy-s_Art_Website/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
