@@ -1,28 +1,34 @@
 {% load static %}
 <div>{% include "navigation_bar.html" %}</div>
 <link rel="stylesheet" href="{% static 'index.css' %}">
+<style>
+.hidden {display:none;}
+</style>
 <body style ="background-color: #c4c5ff">
     <div class = "flex-container">
         {% for piece in pieces %}
-            <div class = "art_container">
-            <script>
-                function imagePopup(nameid) {
-                    id = nameid + "a"
-                    var image = document.getElementById(id);
-                    if (image.style.display === "none") {
-                      image.style.display = "block";
-                    } else {
-                      image.style.display = "none";
-                    }
-                  }
-            </script>
-            <img onclick="imagePopup(this.id)" class = "art_image" id = "{{piece.name}}" src="{{piece.image}}">
-            <div class = "comments-popup" id = "{{piece.name}}a">
-                <div class = "img-body">
-                    <img class = "art-image-popup" src="{{piece.image}}">
-                </div>
-            </div>
+        <div class = "art_container">
+            <img class = "art_image" src="{{piece.image}}"
+            data-toggle-element-id="{{piece.name}}-comments-popup"
+            data-toggle-class="hidden"
+            data-toggle-element-on="click">
         </div>
+        <div class="comments-popup hidden"
+        id = "{{piece.name}}-comments-popup">
+        <div id = "image-body" class = "img-body">
+            <img class = "art-image-popup" src="{{piece.image}}">
+        </div>
+        <div class = "comment-section">
+        </div>
+        </div>
+
         {% endfor %}
+        <script>
+            document.querySelectorAll("[data-toggle-element-id]").forEach((el) => {
+                el.addEventListener(el.dataset.toggleElementOn, () => {
+                  document.getElementById(el.dataset.toggleElementId).classList.toggle(el.dataset.toggleClass);
+                });
+              });
+        </script>
     </div>
 </body>
