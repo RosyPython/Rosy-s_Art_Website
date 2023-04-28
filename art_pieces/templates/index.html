@@ -5,7 +5,21 @@
     <div class = "flex-container">
         {% for piece in pieces %}
             <div class = "art_container">
-            <img class = "art_image" src="{{piece.image}}">
+            <script>
+                function imagePopup(nameid) {
+                    id = nameid + "a"
+                    var image = document.getElementById(id);
+                    if (image.style.display === "none") {
+                      image.style.display = "block";
+                    } else {
+                      image.style.display = "none";
+                    }
+                  }
+            </script>
+            <img onclick="imagePopup(this.id)" class = "art_image" id = "{{piece.name}}" src="{{piece.image}}">
+            <div class = "comments-popup" id = "{{piece.name}}a">
+                abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc 
+            </div>
         </div>
         {% endfor %}
     </div>
