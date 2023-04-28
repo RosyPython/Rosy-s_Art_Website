@@ -8,3 +8,15 @@ from .models import ArtPiece
 def index(request):
     pieces = ArtPiece.objects.all()
     return render(request, "index.html", {'pieces': pieces})
+
+
+def a4(request):
+    return render(request, 'a4_page.html')
+
+
+def about(request):
+    return render(request, 'about.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')

@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-=x%h%5e#h1_sv(^&x*1z9+l!y-9l*=tn9#sbjw%&a%=lm=1951
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'rosypython.pythonanywhere.com'
-    ]
+    'rosypython.pythonanywhere.com',
+    '127.0.0.1'
+]
 
 
 # Application definition
