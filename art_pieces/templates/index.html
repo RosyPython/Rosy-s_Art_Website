@@ -18,7 +18,9 @@
             </script>
             <img onclick="imagePopup(this.id)" class = "art_image" id = "{{piece.name}}" src="{{piece.image}}">
             <div class = "comments-popup" id = "{{piece.name}}a">
-                abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc 
+                <div class = "img-body">
+                    <img class = "art-image-popup" src="{{piece.image}}">
+                </div>
             </div>
         </div>
         {% endfor %}
