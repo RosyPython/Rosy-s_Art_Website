@@ -9,26 +9,31 @@
         {% for piece in pieces %}
         <div class = "art_container">
             <img class = "art_image" src="{{piece.image}}"
-            data-toggle-element-id="{{piece.name}}-comments-popup"
-            data-toggle-class="hidden"
-            data-toggle-element-on="click">
+            id = "art_image">
         </div>
-        <div class="comments-popup hidden"
-        id = "{{piece.name}}-comments-popup">
-        <div id = "image-body" class = "img-body">
-            <img class = "art-image-popup" src="{{piece.image}}">
-        </div>
-        <div class = "comment-section">
-        </div>
-        </div>
-
         {% endfor %}
+        <div class="comments-popup hidden" id = "comments-popup">
+            <div id = "image-body" class = "img-body">
+                <img class = "art-image-popup" id = "art-pop-image" src="">
+            </div>
+            <div class = "comment-section">
+            </div>
+        </div>
         <script>
-            document.querySelectorAll("[data-toggle-element-id]").forEach((el) => {
-                el.addEventListener(el.dataset.toggleElementOn, () => {
-                  document.getElementById(el.dataset.toggleElementId).classList.toggle(el.dataset.toggleClass);
-                });
-              });
+            function changeSrc(src){
+                document.getElementById("art-pop-image").setAttribute("src", src)
+            }
+            function toggle(){
+                document.getElementById("comments-popup").classList.toggle("hidden")
+            }
+            document.querySelectorAll("img.art_image").forEach((el) => {
+                console.log(el)
+                el.addEventListener("click", () => {
+                    changeSrc(el.src)
+                    toggle()
+                }
+                )
+            })
         </script>
     </div>
 </body>
