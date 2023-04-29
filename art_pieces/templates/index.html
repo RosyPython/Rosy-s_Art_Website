@@ -9,17 +9,47 @@
         {% for piece in pieces %}
         <div class = "art_container">
             <img class = "art_image" src="{{piece.image}}"
-            id = "art_image">
+            id = "art_image"
+            name = "{{piece.name}}"
+            data-datefinished = "">
+            <script>
+                d = '{{piece.date_finished}}'
+                pieceName = '{{piece.name}}'
+                document.getElementsByName('{{piece.name}}').forEach((el) => {
+                    if(el.name === pieceName){
+                    el.setAttribute("data-datefinished", d)
+                    }
+                })
+            </script>
         </div>
         {% endfor %}
         <div class="comments-popup hidden" id = "comments-popup">
             <div id = "image-body" class = "img-body">
-                <img class = "art-image-popup" id = "art-pop-image" src="">
+                <img class = "art-image-popup" id = "art-pop-image" src=""
+                name = ""
+                datefinished = "">
             </div>
             <div class = "comment-section">
+                <div class = "comments">
+                    <div id = "comments-name-wrapper" class = "name-wrapper" imgName = "name">
+                        <div class = "name" id = "name">
+                        </div>
+                        <div class = "date-finished" id = "date-finished">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
+            function changeName(name){
+                document.getElementById("art-pop-image").setAttribute("name", name)
+                document.getElementById("comments-name-wrapper").setAttribute("imgName", name)
+                document.getElementById("name").innerHTML = "Name: " + name;
+            }
+            function changeDateFinished(date_finished){
+                document.getElementById("art-pop-image").setAttribute("datefinished", date_finished)
+                document.getElementById("date-finished").innerHTML = ("Date finished: " + date_finished)
+            }
             function changeSrc(src){
                 document.getElementById("art-pop-image").setAttribute("src", src)
             }
@@ -27,9 +57,10 @@
                 document.getElementById("comments-popup").classList.toggle("hidden")
             }
             document.querySelectorAll("img.art_image").forEach((el) => {
-                console.log(el)
                 el.addEventListener("click", () => {
                     changeSrc(el.src)
+                    changeName(el.name)
+                    changeDateFinished(el.dataset.datefinished)
                     toggle()
                 }
                 )

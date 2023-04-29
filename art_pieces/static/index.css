@@ -53,3 +53,20 @@ html {
     height: 100%;
     background-color: white;
 }
+
+.name-wrapper {
+    height: 75px;
+    width: 350px;
+    background-color: aqua;
+}
+
+.name {
+    width: fit-content;
+    padding-top: 13px;
+    height: 25px;
+    padding-left: 15px;
+}
+
+.date-finished {
+    padding-left: 15px;
+}
