@@ -39,19 +39,22 @@ html {
 
 .art-image-popup {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 84%;
+    padding-top: 47px;
 }
 
 .img-body {
-    width: 930px;
-    height: 488px;
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
 .comment-section {
     width: 350px;
+    max-width: 350px;
     height: 100%;
     background-color: white;
+    margin-left: auto;
 }
 
 .name-wrapper {
