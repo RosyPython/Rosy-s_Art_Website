@@ -3,8 +3,10 @@
 <link rel="stylesheet" href="{% static 'index.css' %}">
 <style>
 .hidden {display:none;}
+.ovhidden {overflow-y:visible;}
 </style>
-<body style ="background-color: #c4c5ff">
+<html class = "ovhidden">
+<body class = "ovhidden" id = "ind-body" style ="background-color: #c4c5ff">
     <div class = "flex-container">
         {% for piece in pieces %}
         <div class = "art_container">
@@ -37,6 +39,17 @@
                         <div class = "date-finished" id = "date-finished">
                         </div>
                     </div>
+                    <div class = "comments">
+                        test test test test test test test test test test
+                        test test test test test test test test test test 
+                        test test test test test test test test test test  
+                        test test test test test test test test test test 
+                        test test test test test test test test test test 
+                        test test test test test test test test test test 
+                        test test test test test test test test test test 
+                        test test test test test test test test test test 
+                        test test test test test test test test test test 
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,6 +68,7 @@
             }
             function toggle(){
                 document.getElementById("comments-popup").classList.toggle("hidden")
+                document.getElementById("ind-body").classList.toggle("ovhidden")
             }
             document.querySelectorAll("img.art_image").forEach((el) => {
                 el.addEventListener("click", () => {
